@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICT Inventory Dashboard</title>
+  <link rel="stylesheet" href="/user/css/nav.css">
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="/user/css/dashboard.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      ICT Inventory
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../pages/index.html">Dashboard</a></li>
+    <li><a href="../pages/requestForm.html">Equipment Form</a></li>
+    <li><a href="../pages/personnel.html">Personnel</a></li>
+    <li><a href="../pages/profile.html">Profile</a></li>
+    <li><a href="../pages/records.html">Records</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <span id="navFullname">loading...</span>
+      <img src="/images/default-avatar.png" alt="User" />
+
+      <div class="dropdown" id="dropdown">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+  <div class="welcome">
+    <h1>Welcome, <span id="welcomeName">User</span> 👋</h1>
+    <p>Here is your inventory summary for today.</p>
+  </div>
+
+  <div class="dashboard-cards">
+    <div class="card">
+      <h3>Total Personnel</h3>
+      <p id="personnelTotal">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Equipment</h3>
+      <p id="equipmentTotal">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Equipment Cost</h3>
+      <p id="totalCost">₱0.00</p>
+    </div>
+  </div>
+
+  <!-- ASSETS TABLE -->
+  <div class="assets-section">
+    <h2>Your Assets</h2>
+
+    <table class="assets-table">
+      <thead>
+        <tr>
+          <th>Asset Name</th>
+          <th>Category</th>
+          <th>Serial No.</th>
+          <th>Condition</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody id="assetsTableBody">
+        <!-- Dynamic content here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script type="module" src="../js/dashboard/dashboard.js"></script>
+
+</body>
+</html>

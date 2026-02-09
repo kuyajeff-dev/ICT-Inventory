@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | ICT Inventory</title>
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <h2>ICT Inventory</h2>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./index">Dashboard</a></li>
+    <li><a href="./userManagement">Users</a></li>
+    <li><a href="./formStack">Transfer of Assets</a></li>
+    <li><a href="./transacion.html">Transacion History</a></li>
+    <li><a href="./report">Reports</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <img src="/images/default-avatar.png" alt="Admin">
+      <span id="navFullname">name</span>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown" id="dropdown">
+        <a href="./profile.html">Profile</a>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- PROFILE SECTION -->
+  <section class="profile-section">
+    <div class="profile-card">
+      <div class="profile-img">
+        <img src="/images/default-avatar.png" alt="Admin">
+      </div>
+
+      <div class="profile-details">
+        <h2 id="userFullname">Admin Name</h2>
+        <p id="userEmail">admin@example.com</p>
+        <p id="userRole">Role: Admin</p>
+        <p id="userDivision">Division: District 1</p>
+
+        <div class="profile-actions">
+          <button class="btn primary-btn" id="editProfileBtn">Edit Profile</button>
+          <button class="btn secondary-btn" id="requestAssetBtn">Request Asset</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLES SECTION -->
+  <section class="tables-section">
+
+    <!-- OWN ASSETS TABLE -->
+    <div class="table-wrapper">
+      <div class="table-header">
+        <h3>Your Assets</h3>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Asset Name</th>
+            <th>Category</th>
+            <th>Serial No.</th>
+            <th>Status</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop Dell</td>
+            <td>Laptop</td>
+            <td>DELL-23232</td>
+            <td><span class="badge active">Active</span></td>
+            <td>Office</td>
+          </tr>
+          <tr>
+            <td>Printer Epson</td>
+            <td>Printer</td>
+            <td>EPS-9898</td>
+            <td><span class="badge transfer">Transferred</span></td>
+            <td>Finance Dept</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REQUEST TABLE -->
+    <div class="table-wrapper">
+      <div class="table-header">
+        <h3>Your Requests</h3>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Request ID</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#001</td>
+            <td>Laptop</td>
+            <td>2</td>
+            <td>New Staff</td>
+            <td><span class="badge active">Approved</span></td>
+            <td>2026-01-10</td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Mouse</td>
+            <td>5</td>
+            <td>Replacement</td>
+            <td><span class="badge pending">Pending</span></td>
+            <td>2026-01-11</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+</main>
+
+
+<script src="../modules/dashboard.js"></script>
+<script type="module" src="../modules/utils/navbar.js"></script>
+</body>
+</html>

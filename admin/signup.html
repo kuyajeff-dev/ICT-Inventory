@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign Up | ICT Inventory</title>
+    <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/singup.css">
+</head>
+
+<body>
+
+    <div class="signup-container">
+        <div class="logo">
+            <img src="/images/depedlogo.jpg" alt="Admin Logo">
+        </div>
+
+        <h2>Create Admin Account</h2>
+        <p>ICT Inventory System</p>
+
+        <!-- AVATAR UPLOAD -->
+        <div class="avatar-upload">
+            <label for="avatar">
+                <img src="/images/default-avatar.png" id="avatarPreview" alt="Avatar">
+                <span>Click to upload avatar</span>
+            </label>
+            <input type="file" id="avatar" accept="image/*" hidden>
+        </div>
+
+        <form id="AdminRegister" enctype="multipart/form-data">
+
+        <div class="form-row">
+            <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+            <label for="employeeId">Employee ID</label>
+            <input type="text" id="employeeId" placeholder="Enter employee ID" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter email address" required>
+            </div>
+
+            <div class="form-group">
+            <label for="position">Designation</label>
+            <input type="text" id="position" placeholder="School Division Superintendent" required>
+            </div>
+        </div>
+
+        <!-- LOCATION SELECT -->
+        <div class="form-row">
+            <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" class="styled-select" required>
+                <option value="">-- Select Location --</option>
+                <option value="Division Office">Division Office</option>
+                <option value="District 1">District 1</option>
+                <option value="District 2">District 2</option>
+                <option value="District 3">District 3</option>
+                <option value="District 4">District 4</option>
+                <option value="District 5">District 5</option>
+                <option value="District 6">District 6</option>
+                <option value="District 7">District 7</option>
+                <option value="District 8">District 8</option>
+                <option value="District 9">District 9</option>
+                <option value="District 10">District 10</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create password" required>
+            </div>
+
+            <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" placeholder="Confirm password" required>
+            </div>
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+        <p id="registerMessage"></p>
+
+
+        <div class="login-link">
+            Already have an account?
+            <a href="/admin/login.html">Login</a>
+        </div>
+
+        <div class="footer-text">
+            Authorized Admin Registration Only
+        </div>
+    </div>
+
+    <script src="modules/singup.js"></script>
+
+    <!-- AVATAR PREVIEW SCRIPT -->
+    <script>
+        const avatarInput = document.getElementById('avatar');
+        const avatarPreview = document.getElementById('avatarPreview');
+
+        avatarInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    avatarPreview.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>

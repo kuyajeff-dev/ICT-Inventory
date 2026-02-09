@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Records</title>
+
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/records.css">
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      ICT Inventory
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../pages/index.html">Dashboard</a></li>
+    <li><a href="../pages/requestForm.html">Equipment Form</a></li>
+    <li><a href="../pages/personnel.html">Personnel</a></li>
+    <li><a href="../pages/profile.html">Profile</a></li>
+    <li><a href="../pages/records.html">Records</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <span id="navFullname">loading...</span>
+      <img src="/images/default-avatar.png" alt="User" />
+
+      <div class="dropdown" id="dropdown">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<main class="profile-container">
+
+<section class="records-summary">
+  <div class="summary-card return" data-type="returned">
+    <h3>Returned Equipment</h3>
+    <p class="count">0</p>
+    <span>Items returned</span>
+  </div>
+
+  <div class="summary-card transfer" data-type="transfer">
+    <h3>Transfer Equipment</h3>
+    <p class="count">0</p>
+    <span>Items transfer</span>
+  </div>
+
+  <div class="summary-card unserviceable" data-type="unserviceable">
+    <h3>Unserviceable</h3>
+    <p class="count">0</p>
+    <span>For disposal</span>
+  </div>
+
+  <div class="summary-card retired" data-type="retired">
+    <h3>Retired Personnel</h3>
+    <p class="count">0</p>
+    <span>No longer active</span>
+  </div>
+
+  <div class="summary-card transferred" data-type="personnelTransfer">
+    <h3>Transferred Personnel</h3>
+    <p class="count">0</p>
+    <span>Moved offices</span>
+  </div>
+</section>
+
+<section class="profile-data">
+
+  <div class="table-controls">
+    <button class="tab-btn active" data-type="equipment" data-status="">All Equipment</button>
+    <button class="tab-btn" data-type="equipment" data-status="returned">Returned</button>
+    <button class="tab-btn" data-type="equipment" data-status="transfer">Transfer</button>
+    <button class="tab-btn" data-type="equipment" data-status="unserviceable">Unserviceable</button>
+
+    <button class="tab-btn" data-type="personnel" data-status="">All Personnel</button>
+    <button class="tab-btn" data-type="personnel" data-status="retired">Retired</button>
+    <button class="tab-btn" data-type="personnel" data-status="transferred">Transferred</button>
+  </div>
+
+  <div class="datatable-card">
+    <h3 id="tableTitle">📦 All Equipment Records</h3>
+
+    <table id="recordsTable" class="display">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</section>
+
+
+</main>
+
+<!-- jQuery (required by DataTables 1.x) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+<!-- Your module -->
+<script type="module" src="../js/records/records.js"></script>
+</body>
+</html>

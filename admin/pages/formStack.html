@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transfer Form - ICT Inventory</title>
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/stack-form.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>ICT Inventory</h2>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index">Dashboard</a></li>
+      <li><a href="./userManagement">Users</a></li>
+      <li><a href="./formStack">Transfer of Assets</a></li>
+      <li><a href="./transacion.html">Transaction History</a></li>
+      <li><a href="./report">Reports</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="avatar" id="avatar">
+        <img src="/images/default-avatar.png" alt="Admin" />
+        <span id="navFullname">name</span>
+
+        <div class="dropdown" id="dropdown">
+          <a href="./profile.html">Profile</a>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="transfer-section">
+
+      <!-- HEADER -->
+      <div class="section-header">
+        <h1>Transfer Asset</h1>
+        <p>Transfer items between schools, districts, or division office.</p>
+      </div>
+
+      <!-- MULTI STEP FORM -->
+      <div class="card">
+        <div class="stepper">
+          <div class="step active">1</div>
+          <div class="step">2</div>
+          <div class="step">3</div>
+          <div class="step">4</div>
+        </div>
+
+        <form id="trackingForm" novalidate>
+
+          <!-- STEP 1 -->
+          <div class="step-content active" data-step="1">
+            <h3>Step 1: Asset Details</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Property No.</label>
+                <input type="text" id="propertyNo" name="property_no" required />
+              </div>
+
+              <div class="form-group">
+                <label>Old/Previous Property No.</label>
+                <input type="text" id="oldPropertyNo" name="old_property_no" />
+              </div>
+
+              <div class="form-group">
+                <label>Serial Number</label>
+                <input type="text" id="serialNo" name="serial_no" required />
+              </div>
+
+              <div class="form-group">
+                <label>Item</label>
+                <select id="item" name="item_name" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Unit of Measure</label>
+                <select id="uom" name="uom_id" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Brand / Manufacturer</label>
+                <select id="brand" name="brand_id" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Model</label>
+                <input type="text" id="model" name="model" required />
+              </div>
+
+              <div class="form-group">
+                <label>Specifications</label>
+                <textarea id="specs" name="specs"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Non-DCP</label>
+                <select id="nonDCP" name="non_dcp">
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>DCP Package</label>
+                <select id="dcpPackage" name="dcp_package">
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>DCP Year Package</label>
+                <input type="text" id="dcpYear" name="dcp_year"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-content" data-step="2">
+            <h3>Step 2: Finance & Acquisition</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Category</label>
+                <select id="category" name="category_id" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Classification</label>
+                <select id="classification" name="classification_id" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>GL-SL Code</label>
+                <input type="text" id="glCode" name="gl_sl" required/>
+              </div>
+
+              <div class="form-group">
+                <label>UACS</label>
+                <input type="text" id="uacs" name="uacs" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Acquisition Cost</label>
+                <input id="acquisitionCost" name="acquisition_cost" required />
+              </div>
+
+              <div class="form-group">
+                <label>Acquisition Date</label>
+                <input type="date" id="acquisitionDate" name="acquisition_date" required />
+              </div>
+
+              <div class="form-group">
+                <label>Estimated Useful Life</label>
+                <input type="text" id="usefulLife" name="estimated_useful_life"/>
+              </div>
+
+              <div class="form-group">
+                <label>Mode of Acquisition</label>
+                <select id="modeAcquisition" name="mode_of_acquisition" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Source of Acquisition</label>
+                <select id="sourceAcquisition" name="source_of_acquisition" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Donor</label>
+                <input type="text" id="donor" name="donor" />
+              </div>
+
+              <div class="form-group">
+                <label>Source of Funds</label>
+                <select id="sourceFunds" name="source_of_funds" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Allotment Class</label>
+                <select id="allotmentClass" name="allotment_class" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Procurement management plan(PMP) reference item no.</label>
+                <input type="text" id="pmpRef" name="pmp_reference"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-content" data-step="3">
+            <h3>Step 3: Assignment & Documents</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Supporting Documents (OR/SI/DR/AIR/RRSP)</label>
+                <select id="supportDocs" name="support_docs" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>OR/SI/DR/IAR No.</label>
+                <input type="text" id="docNo" name="document_no" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Transaction Type</label>
+                <select id="transactionType" name="transaction_type" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Accountable Officer</label>
+                <select id="accountableOfficer" name="accountable_officer" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Date assigned to received by accountable officer</label>
+                <input type="date" id="dateAssigned" name="date_assigned_accountable" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Custodian / End User</label>
+                <input type="text" id="custodian" name="custodian_end_user"/>
+              </div>
+
+              <div class="form-group">
+                <label>Date assigned to / received by custodian/ end user</label>
+                <input type="date" id="dateCustodian" name="date_assigned_custodian" />
+              </div>
+
+              <div class="form-group">
+                <label>Received by (new accountable officer / Custodian / end user)</label>
+                <select id="receivedBy" name="received_by" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Date Received</label>
+                <input type="date" id="dateReceived" name="date_received" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Supporting Documents (PAR/ICS/RRSP/RS/WMR)</label>
+                <select id="supportDocs2" name="support_docs2" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>PAR/ICS/RRSP/RS/WMR No.</label>
+                <input type="text" id="docNo2" name="document_no_two" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Supplier / Distributor</label>
+                <input type="text" id="supplier" name="supplier_name"/>
+              </div>
+
+              <div class="form-group">
+                <label>Under Warranty</label>
+                <select id="warranty" name="under_warranty">
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>End of Warranty</label>
+                <input type="date" id="warrantyEnd" name="end_of_warranty" />
+              </div>
+
+              <div class="form-group">
+                <label>Equipment Location</label>
+                <input type="text" id="location" name="location_id" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Non-Functional</label>
+                <select id="nonFunctional" name="non_functional">
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Equipment Condition</label>
+                <select id="condition" name="condition_id" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Accountability / Disposition Status</label>
+                <select id="disposition" name="disposition" required>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Remarks</label>
+                <textarea id="remarks" name="remarks" placeholder="No Remarks Use N/A"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4 - REVIEW -->
+          <div class="step-content" data-step="4">
+            <h3>Step 4: Review & Submit</h3>
+            <div class="preview">
+              <div id="preview"></div>
+              <div class="qr">
+                <label>QR Code</label>
+                <div class="qr-placeholder">AUTO-GENERATED</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="prevBtn" class="btn-secondary">Previous</button>
+            <button type="button" id="nextBtn" class="btn-primary">Next</button>
+            <button type="submit" id="submitBtn" class="btn-primary hidden">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../modules/forms.js"></script>
+  <script type="module" src="../modules/utils/navbar.js"></script>
+</body>
+</html>

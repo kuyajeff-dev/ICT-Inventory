@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personnel</title>
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/request.css">
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      ICT Inventory
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../pages/index.html">Dashboard</a></li>
+    <li><a href="../pages/requestForm.html">Equipment Form</a></li>
+    <li><a href="../pages/personnel.html">Personnel</a></li>
+    <li><a href="../pages/profile.html">Profile</a></li>
+    <li><a href="../pages/records.html">Records</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <span id="navFullname">loading...</span>
+      <img src="/images/default-avatar.png" alt="User" />
+
+      <div class="dropdown" id="dropdown">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+  <div class="form-card">
+    <h2>Personnel Information</h2>
+    <p class="subtitle">Please fill out the personnel details below</p>
+
+    <form id="personnelForm">
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Employee ID</label>
+          <input type="text" id="empId" required>
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lastName" required>
+        </div>
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="firstName" required>
+        </div>
+
+        <div class="form-group">
+          <label>Middle Name</label>
+          <input type="text" id="middleName">
+        </div>
+
+        <div class="form-group">
+          <label>Suffix</label>
+          <select id="suffix">
+            <option value="">None</option>
+            <option>Jr.</option>
+            <option>Sr.</option>
+            <option>III</option>
+            <option>IV</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Personnel Full Name</label>
+          <input type="text" id="fullName" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>SDO Office</label>
+          <input type="text" id="sdoOffice" required>
+        </div>
+
+        <div class="form-group">
+          <label>Position</label>
+          <input type="text" id="position" required>
+        </div>
+
+        <div class="form-group">
+          <label>Officer-in-Charge</label>
+          <select id="oic">
+            <option value="0"></option>
+            <option value="1">✓</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Office of OIC Designation</label>
+          <input type="text" id="oicDesignation">
+        </div>
+
+        <div class="form-group">
+          <label>Mobile No.</label>
+          <input type="tel" id="mobileNo" placeholder="09XXXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label>DepEd Email Address</label>
+          <input type="email" id="depedEmail" placeholder="name@deped.gov.ph">
+        </div>
+
+        <div class="form-group">
+          <label>Personal Email Address</label>
+          <input type="email" id="personalEmail" placeholder="e.g@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label>Date Hired</label>
+          <input type="date" id="dateHired">
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Save Personnel</button>
+        <button type="reset" class="btn-secondary">Clear</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+
+<!-- SCRIPT -->
+<script type="module" src="../js/personnel/personnel.js"></script>
+</body>
+</html>

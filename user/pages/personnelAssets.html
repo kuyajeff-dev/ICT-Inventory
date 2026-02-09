@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personnel Equipment</title>
+
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/personnelAssets.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      ICT Inventory
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../pages/index.html">Dashboard</a></li>
+    <li><a href="../pages/requestForm.html">Equipment Form</a></li>
+    <li><a href="../pages/personnel.html">Personnel</a></li>
+    <li><a href="../pages/profile.html">Profile</a></li>
+    <li><a href="../pages/records.html">Records</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <span id="navFullname">loading...</span>
+      <img src="/images/default-avatar.png" alt="User" />
+
+      <div class="dropdown" id="dropdown">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="header">
+    <h1>Assigned Equipment</h1>
+    <p>Details of personnel and equipment assigned</p>
+  </div>
+
+  <!-- PERSONNEL INFO CARD -->
+  <div class="card" id="personnelCard">
+    <div class="card-header">
+      <h2>Personnel Information</h2>
+    </div>
+    <div class="card-body" id="personnelInfo">
+      Loading...
+    </div>
+  </div>
+
+  <!-- EQUIPMENT TABLE -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Equipment List</h2>
+    </div>
+    <div class="card-body">
+      <table class="assets-table">
+        <thead>
+          <tr>
+            <th>Property No</th>
+            <th>Item</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Status</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody id="assetsTable"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="../js/personnelAssets/personnelAssets.js"></script>
+</body>
+</html>

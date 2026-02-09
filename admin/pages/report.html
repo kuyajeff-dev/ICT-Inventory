@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/report.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>ICT Inventory</h2>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index">Dashboard</a></li>
+      <li><a href="./userManagement">Users</a></li>
+      <li><a href="./formStack">Transfer of Assets</a></li>
+      <li><a href="./transacion.html">Transacion History</a></li>
+      <li><a href="./report">Reports</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="avatar" id="avatar">
+        <img src="/images/default-avatar.png" alt="Admin">
+        <span id="navFullname">name</span>
+
+        <div class="dropdown" id="dropdown">
+          <a href="./profile.html">Profile</a>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- REPORT HEADER -->
+    <section class="report-header">
+      <h1>Analytics Report</h1>
+      <p>Summary of your inventory, repairs, transfers, and user activities.</p>
+    </section>
+
+    <!-- ANALYTICS CARDS -->
+    <section class="analytics-grid">
+      <div class="card">
+        <h3>Total Items</h3>
+        <p class="count" id="totalItems">0</p>
+      </div>
+      <div class="card">
+        <h3>Out of Stock</h3>
+        <p class="count" id="outOfStock">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Transfers</h3>
+        <p class="count" id="totalTransfers">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Repairs</h3>
+        <p class="count" id="totalRepairs">0</p>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Inventory Status</h3>
+        <canvas id="inventoryChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Requests (Transfers vs Repairs)</h3>
+        <canvas id="requestChart"></canvas>
+      </div>
+    </section>
+
+    <!-- REPORT TABLE -->
+    <section class="table-section">
+      <div class="table-header">
+        <h3>Recent Activities</h3>
+        <input type="text" id="search" placeholder="Search...">
+      </div>
+
+      <div class="table-wrapper">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reportBody">
+            <!-- Rows inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- CHART JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../modules/report.js"></script>
+  <script type="module" src="../modules/utils/navbar.js"></script>
+</body>
+</html>

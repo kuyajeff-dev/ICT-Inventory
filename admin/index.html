@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | ICT Inventory</title>
+    <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.all.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.min.css
+    " rel="stylesheet">
+    </head>
+
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+        <img src="/images/depedlogo.jpg" alt="Admin Logo">
+        </div>
+
+        <h2>Admin Panel</h2>
+        <p>ICT Inventory System</p>
+
+        <form id="adminLogin">
+
+            <!-- LOGIN STEP -->
+            <div id="loginStep">
+                <div class="form-group">
+                    <label>Admin Email</label>
+                    <input type="email" id="email" placeholder="Enter admin email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+
+            <!-- OTP STEP -->
+            <div id="otpStep" class="hidden">
+                <div class="form-group">
+                    <label>Enter OTP</label>
+                    <input type="text" id="otp" placeholder="6-digit OTP">
+                </div>
+
+                <button type="button" id="verifyOtpBtn" class="login-btn">
+                    Verify OTP
+                </button>
+
+                <div class="otp-info">
+                    <span id="otpMessage"></span>
+                    <span id="otpTimer"></span>
+                </div>
+
+                <button type="button" id="resendOtpBtn" class="resend-btn hidden">
+                    Resend OTP
+                </button>
+            </div>
+
+        </form>
+        <p id="loginMessage"></p>
+
+        <!-- SIGN UP LINK -->
+        <div class="signup-link">
+            Don’t have an admin account?
+            <a href="/admin/signup.html">Sign up</a>
+        </div>
+
+        <div class="footer-text">
+            Authorized Personnel Only
+        </div>
+    </div>
+
+    <script src="modules/singin.js"></script>
+</body>
+</html>

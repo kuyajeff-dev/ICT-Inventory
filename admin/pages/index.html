@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | ICT Inventory</title>
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <h2>ICT Inventory</h2>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./index">Dashboard</a></li>
+    <li><a href="./userManagement">Users</a></li>
+    <li><a href="./formStack">Transfer of Assets</a></li>
+    <li><a href="./transacion.html">Transacion History</a></li>
+    <li><a href="./report">Reports</a></li>
+
+    <li class="mobile-only">
+      <button id="mobileLogoutBtn" class="mobile-logout">Logout</button>
+    </li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <img src="/images/default-avatar.png" alt="Admin">
+      <span id="navFullname">name</span>
+
+      <!-- DROPDOWN -->
+      <div class="dropdown" id="dropdown">
+        <a href="./profile.html">Profile</a>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- SUMMARY CARDS -->
+  <section class="summary-cards">
+    <div class="summary-card deped">
+      <h4>DepEd (DCP)</h4>
+      <p id="dcpCount">120</p>
+    </div>
+    <div class="summary-card nondeped">
+      <h4>DepEd (Non-DCP)</h4>
+      <p id="nonDcpCount">85</p>
+    </div>
+    <div class="summary-card others">
+      <h4>Others</h4>
+      <p id="othersCount">45</p>
+    </div>
+  </section>
+
+  <section class="filter-controls">
+
+    <div class="filter-group">
+      <label>Division/School</label>
+      <select id="mainSelect"></select>
+    </div>
+
+    <div class="filter-group hidden" id="districtGroup">
+      <label>District</label>
+      <select id="districtSelect"></select>
+    </div>
+
+    <div class="filter-group hidden" id="schoolGroup">
+      <label>School</label>
+      <select id="schoolSelect"></select>
+    </div>
+
+    <div class="filter-group hidden" id="ownershipGroup">
+      <label>Ownership</label>
+      <select id="ownershipSelect"></select>
+    </div>
+
+    <div class="filter-group hidden" id="depedGroup">
+      <label>DepEd Type</label>
+      <select id="depedTypeSelect"></select>
+    </div>
+
+    <div class="filter-group hidden" id="programGroup">
+      <label>Program</label>
+      <select id="programSelect"></select>
+    </div>
+
+  </section>
+
+  <!-- TABLE -->
+  <section class="table-section">
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" placeholder="Search item, serial no, property no..." />
+      <button id="clearSearch" class="clear-btn" title="Clear search">✕</button>
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>Fullname</th>
+            <th>Property No</th>
+            <th>Serial No</th>
+            <th>Item</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryTable"></tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      <button id="prevBtn" class="page-btn" disabled>Prev</button>
+      <span id="pageInfo">Page 1 of 1</span>
+      <button id="nextBtn" class="page-btn" disabled>Next</button>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="../modules/dashboard.js"></script>
+</body>
+</html>

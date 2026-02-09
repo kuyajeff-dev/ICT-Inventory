@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Inventory System | Login</title>
+    <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.all.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.min.css
+    " rel="stylesheet">
+    </head>
+</head>
+
+<body>
+
+    <!-- User Login UI -->
+    <div class="login-container">
+        <h2>ICT Inventory</h2>
+        <p>User Login</p>
+
+        <form id="userStep">
+            <div class="form-group">
+                <label for="email">Email / Username</label>
+                <input type="text" id="email" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+            <p id="message"></p>
+        </form>
+
+        <div class="footer-text">
+            © DepEd ICT Inventory System 2026
+        </div>
+    </div>
+
+    <script type="module" src="./js/singin.js"></script>
+</body>
+</html>

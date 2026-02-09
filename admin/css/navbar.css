@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #1e3c72;
+  color: white;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.nav-links li.active a,
+.nav-links li a:hover {
+  opacity: 1;
+  border-bottom: 2px solid white;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* AVATAR */
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.avatar img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background: white;
+  color: #333;
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.dropdown a,
+.dropdown button {
+  padding: 8px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown button {
+  background: #e11d48;
+  color: white;
+  border-radius: 5px;
+}
+
+.dropdown button:hover {
+  background: #be123c;
+}
+/* BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.active { background: #dcfce7; color: #166534; }
+.badge.transfer { background: #ffedd5; color: #9a3412; }
+.badge.dispose { background: #fee2e2; color: #991b1b; }
+
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #1e3c72;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/userManagement.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <h2>ICT Inventory</h2>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./index">Dashboard</a></li>
+    <li><a href="./userManagement">Users</a></li>
+    <li><a href="./formStack">Transfer of Assets</a></li>
+    <li><a href="./transacion.html">Transaction History</a></li>
+    <li><a href="./report">Reports</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="avatar" id="avatar">
+      <img src="/images/default-avatar.png" alt="Admin">
+      <span id="navFullname">name</span>
+      <div class="dropdown" id="dropdown">
+        <a href="./profile.html">Profile</a>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container">
+
+  <div class="page-header">
+    <h1>User Management</h1>
+    <button class="btn btn-primary" id="addUserBtn">Add User</button>
+  </div>
+
+  <!-- SEARCH & FILTER -->
+  <div class="table-actions">
+    <input type="text" id="searchInput" placeholder="Search by name, email, or ID">
+
+    <select id="statusFilter" class="styled-select">
+      <option value="">All Status</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+
+    <select id="locationFilter" class="styled-select">
+      <option value="">All Locations</option>
+      <option value="Division Office">Division Office</option>
+      <option value="District 1">District 1</option>
+      <option value="District 2">District 2</option>
+      <option value="District 3">District 3</option>
+      <option value="District 4">District 4</option>
+      <option value="District 5">District 5</option>
+      <option value="District 6">District 6</option>
+      <option value="District 7">District 7</option>
+      <option value="District 8">District 8</option>
+      <option value="District 9">District 9</option>
+      <option value="District 10">District 10</option>
+    </select>
+
+    <select id="roleFilter" class="styled-select">
+      <option value="">All Roles</option>
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+      <option value="superadmin">Superadmin</option>
+    </select>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Image</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Location</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="usersTbody">
+        <!-- JS injects rows -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <button id="prevBtn" class="btn btn-secondary">Previous</button>
+    <span id="pageInfo"></span>
+    <button id="nextBtn" class="btn btn-secondary">Next</button>
+  </div>
+
+</div>
+
+<!-- ADD / EDIT USER MODAL -->
+<div class="modal" id="addUserModal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>User Details</h2>
+      <button class="btn btn-secondary" id="closeModal">X</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="avatar-preview">
+        <img id="avatarPreview" src="/images/default-avatar.png">
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Employee ID</label>
+          <input type="text" id="employeeId">
+        </div>
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="fullname">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password">
+        </div>
+
+        <div class="form-group">
+          <label>Position</label>
+          <input type="text" id="position">
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <select id="location" class="styled-select">
+            <option value="">Select Location</option>
+            <option value="Division Office">Division Office</option>
+            <option value="District 1">District 1</option>
+            <option value="District 2">District 2</option>
+            <option value="District 3">District 3</option>
+            <option value="District 4">District 4</option>
+            <option value="District 5">District 5</option>
+            <option value="District 6">District 6</option>
+            <option value="District 7">District 7</option>
+            <option value="District 8">District 8</option>
+            <option value="District 9">District 9</option>
+            <option value="District 10">District 10</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Role</label>
+          <select id="role" class="styled-select">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="superadmin">Superadmin</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Status</label>
+          <select id="status" class="styled-select">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Avatar</label>
+          <input type="file" id="avatarInput" accept="image/*">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+      <button class="btn btn-primary" id="saveBtn">Save User</button>
+      <button class="btn btn-primary" id="updateBtn" style="display:none;">Update User</button>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="../modules/userManagement.js"></script>
+<script type="module" src="../modules/utils/navbar.js"></script>
+
+</body>
+</html>

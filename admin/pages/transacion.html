@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transacion History</title>
+  <link rel="icon" href="/images/depedlogo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/tracking.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>ICT Inventory</h2>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index">Dashboard</a></li>
+      <li><a href="./userManagement">Users</a></li>
+      <li><a href="./formStack">Transfer of Assets</a></li>
+      <li><a href="./transacion.html">Transacion History</a></li>
+      <li><a href="./report">Reports</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="avatar" id="avatar">
+        <img src="/images/default-avatar.png" alt="Admin">
+        <span id="navFullname">name</span>
+
+        <div class="dropdown" id="dropdown">
+          <a href="./profile.html">Profile</a>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="cards">
+      <div class="card">
+        <h3>Repair Requests</h3>
+        <p class="count" id="repairCount">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Transfer Requests</h3>
+        <p class="count" id="transferCount">0</p>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Tracking Table</h2>
+
+      <div class="table-wrapper">
+        <table class="tracking-table">
+          <thead>
+            <tr>
+              <th>Tracking ID</th>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Requested By</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="trackingBody">
+            <!-- rows will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../modules/utils/navbar.js"></script>
+  <script src="../modules/tracking.js"></script>
+</body>
+</html>

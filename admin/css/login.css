@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+         url("/images/depedlogo.jpg") no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #1e3c72;
+    margin-bottom: 5px;
+}
+
+.login-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1e3c72;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 11px;
+    background: #1e3c72;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #16305c;
+}
+
+/* ===== SIGN UP LINK ===== */
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #1e3c72;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 12px;
+    color: #777;
+}
+.hidden {
+    display: none;
+}
+
+/* ===== OTP STYLES ===== */
+.otp-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-top: 8px;
+    color: #555;
+}
+
+.resend-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #e5e7eb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resend-btn:hover {
+    background: #d1d5db;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 15px;
+        padding: 25px;
+    }
+}

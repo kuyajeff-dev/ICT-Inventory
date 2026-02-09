@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\xampp\\htdocs\\ICT-Inventory\\logs\\.ee90a55ee11a46ff81e374863fa878ef629f7018-audit.json",
+    "files": [
+        {
+            "date": 1770164534365,
+            "name": "C:\\xampp\\htdocs\\ICT-Inventory\\logs\\combined-2026-02-04.log",
+            "hash": "6975785de7aab5d43b5ad79c1aa6802ff6d61a430367909fe307bf8cbfa394b5"
+        },
+        {
+            "date": 1770249810848,
+            "name": "C:\\xampp\\htdocs\\ICT-Inventory\\logs\\combined-2026-02-05.log",
+            "hash": "1bd52d5f9e20c8c0d38ea2a1f62532dc9a0320ac357afe828c63bf822fa0f4dc"
+        },
+        {
+            "date": 1770335839791,
+            "name": "C:\\xampp\\htdocs\\ICT-Inventory\\logs\\combined-2026-02-06.log",
+            "hash": "d6c343fa1c3b79688860203e9a5c76d29dc8cf063e7b33afe11bb3212d096997"
+        }
+    ],
+    "hashType": "sha256"
+}
